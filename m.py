@@ -235,8 +235,8 @@ def handle_bgmi(message):
             target = command[1]
             port = int(command[2])  # Convert time to integer
             time = int(command[3])  # Convert port to integer
-            if time > 0:
-                response = "Error: Time interval must be less than 0"
+            if time > 300:
+                response = "Error: Time interval must be less than 300"
             else:
                 record_command_logs(user_id, '/bgmi', target, port, time)
                 log_command(user_id, target, port, time)
@@ -301,7 +301,8 @@ Buy From :- @AYAN_CHEATS_OWNER
 def welcome_start(message):
     user_name = message.from_user.first_name
     response = f'''👋🏻Welcome to Your Home, {user_name}! Feel paid to Explore.
-🤖Try To Run This Command : /commands '''
+🤖Try To Run This Command : /commands 
+✅Access buy from:- @AYAN_CHEATS_OWNER'''
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['rules'])
